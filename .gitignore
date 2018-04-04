@@ -1,6 +1,24 @@
-node_modules
-temp
-dist
+# Build directories 
+dist/
+
+# Dependencies directories
+node_modules/
+app/bower_components/
+
+# Dependencies lock files
+*-lock.json
+*.lock
+
+# Log files
+*.log
+
+# Cache directories
 .sass-cache
-app/bower_components
+temp
 .tmp/
+
+# VsCode features
+.history/
+
+# VsCode editor config
+.editorconfig
