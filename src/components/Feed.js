@@ -5,7 +5,9 @@ import FeedItem from './FeedItem';
 const Feed = (props) => {
     return (
         <div>
-            <FeedItem />
+            { props.feeds.map(item =>
+                <FeedItem key={item.id} feed={item} />
+            )}
         </div>
     );
 }
