@@ -7,6 +7,8 @@ import Feed from './Feed'
 // JSON data
 import data from '../data/data.json'
 
+import './App.css';
+
 class App extends Component {
     constructor(props) {
         super(props)
