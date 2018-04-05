@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
+import firebase from 'firebase'
 
 import Navigation from './Navigation'
 import Jumbotron from './Jumbotron'
 import Feed from './Feed'
 
-// JSON data
-import data from '../data/data.json'
-
 import './App.css';
+
+const envs = process.env
 
 class App extends Component {
     constructor(props) {
@@ -16,8 +16,18 @@ class App extends Component {
         this.state = {
             name: "Manny Henri",
             jumbotronTitle: "List of courses",
-            feeds: data,
+            feeds: [],
         }
+    }
+    componentWillMount() {
+        firebase.initializeApp({
+            apiKey: envs.FIREBASE_API_KEY,
+            authDomain: envs.FIREBASE_AUTH_DOMAIN,
+            databaseURL: envs.FIREBASE_DATABASE_URL,
+            projectId: envs.FIREBASE_PROJECT_ID,
+            storageBucket: envs.FIREBASE_STORAGE_BUCKET,
+            messagingSenderId: envs.FIREBASE_MESSAGING_SENDER_ID,
+        })
     }
     render() {
         return (
