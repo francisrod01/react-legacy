@@ -21,13 +21,20 @@ class App extends Component {
     }
     componentWillMount() {
         firebase.initializeApp({
-            apiKey: envs.FIREBASE_API_KEY,
-            authDomain: envs.FIREBASE_AUTH_DOMAIN,
-            databaseURL: envs.FIREBASE_DATABASE_URL,
-            projectId: envs.FIREBASE_PROJECT_ID,
-            storageBucket: envs.FIREBASE_STORAGE_BUCKET,
-            messagingSenderId: envs.FIREBASE_MESSAGING_SENDER_ID,
-        })
+            apiKey: envs.REACT_APP_FIREBASE_API_KEY,
+            authDomain: envs.REACT_APP_FIREBASE_AUTH_DOMAIN,
+            databaseURL: envs.REACT_APP_FIREBASE_DATABASE_URL,
+            projectId: envs.REACT_APP_FIREBASE_PROJECT_ID,
+            storageBucket: envs.REACT_APP_FIREBASE_STORAGE_BUCKET,
+            messagingSenderId: envs.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
+        });
+
+        firebase.database().ref('/')
+            .on('value', snapshot => {
+                this.setState({
+                    feeds: snapshot.val(),
+                })
+            });
     }
     render() {
         return (
