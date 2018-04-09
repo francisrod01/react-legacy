@@ -1,10 +1,9 @@
-'use strict';
-
 if (typeof Promise === 'undefined') {
   // Rejection tracking prevents a common issue where React gets into an
   // inconsistent state due to an error, but it gets swallowed by a Promise,
   // and the user has no idea what causes React's erratic future behavior.
-  require('promise/lib/rejection-tracking').enable();
+  require.resolve('promise/lib/rejection-tracking').enable();
+  /* eslint-disable-next-line global-require */
   window.Promise = require('promise/lib/es6-extensions.js');
 }
 

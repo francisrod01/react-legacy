@@ -26,12 +26,24 @@ and this doesn't
 SECRET=anotherSecret
 ```
 
-More details about it in the [React oficial docs][3]
+
+### References ###
+
+* React Docs - [Adding Development Environment Variables in env][3]
+
+* [ESLint User Guide][4] - The pluggable linting utility for JavaScript and JSX
+
+* [Airbnb Javascript Style Guide][5]
+
+* [Airbnb React/JSX Style Guide][6]
 
 
   [1]: https://www.linkedin.com/learning/react-replacing-legacy-projects
   [2]: https://www.linkedin.com/learning/instructors/emmanuel-henri
   [3]: https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#adding-development-environment-variables-in-env
+  [4]: https://eslint.org/docs/user-guide/
+  [5]: https://github.com/airbnb/javascript
+  [6]: https://github.com/airbnb/javascript/tree/master/react
 
 
 ### License
