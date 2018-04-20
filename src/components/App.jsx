@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
 import firebase from 'firebase';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import Navigation from './Navigation';
 import Jumbotron from './Jumbotron';
+import About from './About';
+import Contact from './Contact';
 import Feed from './Feed';
 
 import './App.css';
@@ -38,17 +41,27 @@ class App extends Component {
   }
   render() {
     return (
-      <div className="container">
-        <Navigation />
+      <Router>
+        <div className="container">
+          <Navigation />
 
-        <Jumbotron title={this.state.jumbotronTitle} />
+          <Jumbotron title={this.state.jumbotronTitle} />
 
-        <Feed feeds={this.state.feeds} />
+          <Switch>
+            <Route
+              exact
+              path="/"
+              render={() => <Feed feeds={this.state.feeds} />}
+            />
+            <Route path="/about" component={About} />
+            <Route path="/contact" component={Contact} />
+          </Switch>
 
-        <div className="footer">
-          <p>&copy; {this.state.name} Inc.</p>
+          <div className="footer">
+            <p>&copy; {this.state.name} Inc.</p>
+          </div>
         </div>
-      </div>
+      </Router>
     );
   }
 }
