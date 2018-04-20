@@ -1,5 +1,6 @@
 # Build directories 
 dist/
+build/
 
 # Dependencies directories
 node_modules/
